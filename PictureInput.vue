@@ -256,9 +256,11 @@ export default {
     },
     onFileChange (e, prefill) {
       let files = e.target.files || e.dataTransfer.files
+      console.log(files)
       if (!files.length) {
         return
       }
+      console.log(files[0].size)
       if (files[0].size <= 0 || files[0].size > this.size * 1024 * 1024) {
         this.$emit('error', {
           type: 'fileSize',
