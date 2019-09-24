@@ -38,7 +38,7 @@
         <button v-if="removable" @click.prevent="removeImage" :class="removeButtonClass" type="button">{{ strings.remove }}</button>
       </div>
     </div>
-    <input ref="fileInput" type="file" :name="name" :id="id" :accept="accept" @change="onFileChange" :capture="capture" />
+    <input ref="fileInput" type="file" :name="name" :id="id" :accept="accept" @change="onFileChange" />
   </div>
 </template>
 
