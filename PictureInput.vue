@@ -318,11 +318,6 @@ export default {
         let reader = new FileReader()
         reader.onload = e => {
           this.image = e.target.result
-          if (prefill) {
-            this.$emit('prefill')
-          } else {
-            this.$emit('change', this.image)
-          }
           this.imageObject = new Image()
           this.imageObject.onload = () => {
             if (this.autoToggleAspectRatio) {
@@ -333,6 +328,11 @@ export default {
               }
             }
             this.drawImage(this.imageObject)
+          if (prefill) {
+            this.$emit('prefill')
+          } else {
+            this.$emit('change', this.image)
+          }
           }
           this.imageObject.src = this.image
         }
